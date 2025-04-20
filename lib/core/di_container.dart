@@ -7,6 +7,11 @@ import '../stock_details/data/repository/stock_detail_repository_impl.dart';
 import '../stock_details/domain/repositories/stock_detail_repository.dart';
 import '../stock_details/domain/use_cases/get_stock_detail_use_case.dart';
 import '../stock_details/presentation/bloc/stock_detail_bloc.dart';
+import '../stock_search/data/data_source/stock_lookup_api_data_source.dart';
+import '../stock_search/data/repository/stock_lookup_repository_impl.dart';
+import '../stock_search/domain/repositories/stock_lookup_repository.dart';
+import '../stock_search/domain/use_cases/get_stock_by_symbol_use_case.dart';
+import '../stock_search/presentation/stock_lookup_bloc.dart';
 import '../top_stocks/data/date_source/online/stock_api_data_source.dart';
 import '../top_stocks/data/repository/stock_repository_impl.dart';
 import '../top_stocks/domain/repositories/stock_repository.dart';
@@ -53,6 +58,23 @@ Future<void> init() async {
   );
 
 
+//! Features - Stock Lookup
+
+//Bloc
+// sl.registerFactory(() => StockLookupBloc(sl()));
+
+// Use case
+  sl.registerLazySingleton(() => GetStockBySymbolUseCase(sl()));
+
+// Repository
+  sl.registerLazySingleton<StockLookupRepository>(
+        () => StockLookupRepositoryImpl(sl()),
+  );
+
+// Data Source
+  sl.registerLazySingleton<StockLookupApiDataSourceDataSource>(
+        () => StockLookupApiDataSourceDataSourceImpl(sl()),
+  );
 
   //! External
   sl.registerLazySingleton(() => Dio());

@@ -6,7 +6,7 @@ import '../../domain/entities/stock_lookup_entity.dart';
 import '../../domain/repositories/stock_lookup_repository.dart';
 
 class StockLookupRepositoryImpl implements StockLookupRepository {
-  final StockLookupApiDataSource remoteDataSource;
+  final StockLookupApiDataSourceDataSource remoteDataSource;
 
   StockLookupRepositoryImpl(this.remoteDataSource);
 

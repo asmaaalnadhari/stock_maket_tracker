@@ -8,10 +8,10 @@ abstract class StockLookupApiDataSourceDataSource {
   Future<StockLookupModel> getStockBySymbol(String symbol);
 }
 
-class StockLookupApiDataSource implements StockLookupApiDataSourceDataSource {
+class StockLookupApiDataSourceDataSourceImpl implements StockLookupApiDataSourceDataSource {
   final Dio dio;
 
-  StockLookupApiDataSource(this.dio);
+  StockLookupApiDataSourceDataSourceImpl(this.dio);
 
   @override
   Future<StockLookupModel> getStockBySymbol(String symbol) async {
