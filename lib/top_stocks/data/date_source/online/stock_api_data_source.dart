@@ -9,10 +9,10 @@ abstract class StockApiDataSource {
   Future<List<StockModel>> getTopStocks();
 }
 
-class StockRemoteDataSourceImpl implements StockApiDataSource {
+class StockApiDataSourceImpl implements StockApiDataSource {
   final Dio dio;
 
-  StockRemoteDataSourceImpl(this.dio);
+  StockApiDataSourceImpl(this.dio);
 
   @override
   Future<List<StockModel>> getTopStocks() async {
