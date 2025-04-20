@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../stock_details/presentation/stock_detail_pages/stock_detail_page.dart';
 import '../../../top_stocks/domain/entities/stock_entity.dart';
 
 class StockTileWidget extends StatelessWidget {
@@ -20,6 +21,12 @@ class StockTileWidget extends StatelessWidget {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text('Show details for ${stock.name}')),
             );
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => StockDetailPage(symbol: stock.symbol),
+              ),
+            );
+
           },
           child: const Text('Details'),
         ),
