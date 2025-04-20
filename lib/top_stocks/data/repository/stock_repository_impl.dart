@@ -5,7 +5,7 @@ import '../../domain/repositories/stock_repository.dart';
 import '../date_source/online/stock_api_data_source.dart';
 
 class StockRepositoryImpl implements StockRepository {
-  final StockRemoteDataSource remoteDataSource;
+  final StockApiDataSource remoteDataSource;
 
   StockRepositoryImpl(this.remoteDataSource);
 

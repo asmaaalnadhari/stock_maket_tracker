@@ -5,11 +5,11 @@ import '../../../../core/error/error_handler.dart';
 import '../../../../core/error/exceptions.dart';
 import '../../models/stock_model.dart';
 
-abstract class StockRemoteDataSource {
+abstract class StockApiDataSource {
   Future<List<StockModel>> getTopStocks();
 }
 
-class StockRemoteDataSourceImpl implements StockRemoteDataSource {
+class StockRemoteDataSourceImpl implements StockApiDataSource {
   final Dio dio;
 
   StockRemoteDataSourceImpl(this.dio);
